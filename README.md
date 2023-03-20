@@ -3,7 +3,7 @@
 ![accumulator_azmi.png](https://github.com/2azmi2/Tugas-Big-Data/blob/main/accumulator_azmi.png)
 
 <h2></h2>
-import sys
+<p>import sys
 from operator import  add
 from pyspark import SparkContext
 
@@ -29,4 +29,4 @@ cached_log = error_log.cache()
 print “Total number of error records are %s” % (cached_log.count())
 
 # Now find the number of lines with 
-print “Number of product pages visited that have Errors is %s” % (cached_log.filter(lambda x: “product” in x).count()) 
+print “Number of product pages visited that have Errors is %s” % (cached_log.filter(lambda x: “product” in x).count()) </p>
