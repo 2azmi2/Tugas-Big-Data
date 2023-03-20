@@ -12,6 +12,7 @@
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/WordCount2_azmi.png">
 
 <h2>SystemCommandsOutput</h2>
+<p>disini menggunakan "!" 1 agar tidak error.
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/SystemCommandsOutput_azmi.png">
 
 <h2>SystemCommandsReturnCode</h2>
