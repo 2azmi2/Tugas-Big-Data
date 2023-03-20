@@ -1,6 +1,6 @@
 <h2>Accumulator</h2>
 <p>Mengizinkan tugas untuk menulis data ke variabel bersama alih-alih memiliki variabel terpisah untuk setiap tugas. </p>
-<a src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/accumulator_azmi.png")></a>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/accumulator_azmi.png")>
 
 <h2>Broadcast</h2>
 <p>Memungkinkan variabel hanya dibaca (read-only) yang telah disimpan (cached) pada setiap mesin pekerja, alih-alih mengirimkannya bersama setiap tugas.</p>
