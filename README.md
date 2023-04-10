@@ -1,13 +1,10 @@
 <h2>Kode 1 : Accumulator</h2>
 <p>Mengizinkan tugas untuk menulis data ke variabel bersama alih-alih memiliki variabel terpisah untuk setiap tugas. </p>
 
-    * Code
-      ```sh
       myaccum = sc.accumulator(0)
       myrdd = sc.parallelize(range(1,100))
       myrdd.foreach(lambda value: myaccum.add(value))
       print myaccum.value
-      ```
 
 <p>Berikut adalah penjelasan kodenya : <br>
  1. sc = berguna untuk membuat suatu object dari spark context.<br>
