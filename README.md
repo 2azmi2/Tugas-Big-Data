@@ -33,7 +33,7 @@
 <h2>Kode 3 : Log Analytic</h2>
 <p>Memungkinkan variabel hanya dibaca (read-only) yang telah disimpan (cached) pada setiap mesin pekerja, alih-alih mengirimkannya bersama setiap tugas.</p><br>
 
-    // Contoh code Broadcast
+    // Contoh code Log Analytic
     # Get the lines from the textfile, create 4 partitions
     access_log = sc.textFile("path/folder/anda", 4)
 
@@ -61,7 +61,7 @@
 <h2>Kode 4 : Pair RDD</h2>
 <br>
 
-    // Contoh code Broadcast
+    // Contoh code Pair RDD
     mylist = ["my", "pair", "rdd"]
     myRDD = sc.parallelize(mylist)
     myPairRDD = myRDD.map(lambda s: (s, len(s)))
@@ -82,7 +82,7 @@
 <h2>Kode 5 : Understanding RDDs</h2>
 <p>Adalah unit dasar data dalam Spark dan pemrograman Spark berputar di sekitar pembuatan dan proses operasi pada RDDs. RDD merupakan kumpulan data yang tidak dapat diubah (immutable) dan terbagi menjadi beberapa partisi di dalam klaster yang dapat direkonstruksi (re-computed) kembali jika salah satu partisinya hilang.</p><br>
 
-    // Contoh code Broadcast
+    // Contoh code Understanding RDDs
     # Check Default Parallelism
     sc.defaultParallelism
 
@@ -126,7 +126,7 @@
 <h2>Kode 6 : Word Count</h2>
 <p>Menghitung setiap jumlah kata yang ada pada file / text.</p><br>
 
-    // Contoh code Broadcast
+    // Contoh code Word Count
     from operator import add
     lines = sc.textFile("/path/to/README.md")
     counts = lines.flatMap(lambda x: x.split(' ')) \
