@@ -194,7 +194,7 @@
 
       val deptDF = spark.createDataFrame(deptRDD)
 
-<h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
+<h4>Mebuat dataset (Code 1o)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/08MembuatDataset1.png")>
 <hr/>
 <hr/>
@@ -206,6 +206,6 @@
 
       deptDS.filter(x => x.dept_location > 1).show()
 
-<h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
+<h4>Mebuat dataset (Code 11)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/09MembuatDataset2.png")>
 <hr/>
