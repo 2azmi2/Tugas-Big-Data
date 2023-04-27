@@ -65,7 +65,8 @@
 <ul>
       <li>parallelize = sebuah method pada pyspark yang digunakan untuk membuat sebuah RDDs.</li>
       <li>toDF = sebuah method pada pyspark yang digunakan untuk mengubah sebuah sebuah data RDDs menjadi dataframe.</li>
-</ul>
+</ul><br>
+
 <h4>Membuat Dataframe dengan Parallelizing List (Code 1 + Code 3)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/02Parallelize.png")>
 <hr/>
@@ -97,6 +98,13 @@
       spark.sql("SHOW TABLES").show()
       spark.sql("SELECT name,age FROM people where age > 19").show() 
 
+<ul>
+      <li>pyspark.sql = modul di PySpark yang digunakan untuk pemrosesan data dengan SQL (sebuah libarary pyspark untuk pemrosesan sql).</li>
+      <li>SQLContext = bagian dari library pyspark.sql yang digunakan untuk membuat objek SQLContext di PySpark.</li>
+      <li>createOrReplaceTempView = method pada objek DataFrame di PySpark untuk membuat sebuah temporary view (pandangan sementara) dari suatu dataframe.</li>
+      <li>show = sebuah fungsi yang digunakan untuk menampilkan isi dari dataframe.</li>
+</ul><br>
+
 <h4>Read File yang ada di hdfs (Code 5)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/03ReadFile.png")>
 <hr/>
@@ -122,6 +130,15 @@
       df_people.createOrReplaceTempView("people")
       spark.sql("select * from people").show() 
 
+<ul>
+      <li>textFile = sebuah method di PySpark yang digunakan untuk membaca file teks.</li>
+      <li>map = sebuha method pada RDD di PySpark untuk menerapkan sebuah fungsi pada setiap elemen RDD. </li>
+      <li>lambda = sintaks untuk mendefinisikan sebuah fungsi anonim di Python.</li>
+      <li>strip = method pada string di Python yang digunakan untuk menghapus spasi atau karakter tertentu di awal atau akhir string.</li>
+      <li>StructField = sebuah fungsi yang digunakan untuk mendefinisikan sebuah kolom pada sebuah schema. </li>
+      <li>StringType = sebuah fungsi yang digunakan untuk mendefinisikan tipe data string pada sebuah schema.</li>
+</ul><br>
+
 <h4>Read file dan assign schema (Code 6)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/04AssignSchema.png")>
 <hr/>
@@ -146,6 +163,13 @@
       df1 = spark.read.format('jdbc').options(url='jdbc:mysql://ebt-polinema.id:3306/polinema_pln?user=ebt&password=EBT@2022@pltb', dbtable='t_wind_turbine').load()
       df1.show()
 
+<ul>
+      <li>spark.read.format = sebuah method di PySpark yang digunakan untuk membaca data dari sumber eksternal dengan format tertentu.  </li>
+      <li>jdbc = sebuah method di PySpark yang digunakan untuk membaca data dari database dengan menggunakan JDBC (Java Database Connectivity) driver.</li>
+      <li>options = sebuah method di PySpark yang digunakan untuk mengatur opsi pembacaan data dari sumber eksternal. </li>
+      <li>load = sebuah method di PySpark yang digunakan untuk membaca data dari sumber eksternal. </li>
+</ul><br>
+
 <h4>Dataframe dari data mysql cara 1 (Code 7)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/02_dataframe_mysql/05Metode1.png")>
 <hr/>
@@ -157,6 +181,9 @@
       df2 = spark.read.format('jdbc').options(url='jdbc:mysql://ebt-polinema.id:3306/polinema_pln', dbtable='t_wind_turbine', user='ebt', password='EBT@2022@pltb').load()
       df2.show()
 
+<ul>
+      <li>show = sebuah fungsi yang digunakan untuk menampilkan isi dari dataframe.</li>
+</ul><br>
 <h4>Dataframe dari data mysql cara 2 (Code 8)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/02_dataframe_mysql/06Metode2.png")>
 <hr/>
@@ -177,6 +204,11 @@
       df2rdd = df.rdd
       df2rdd.take(2)
 
+<ul>
+      <li>collect = sebuah method yang digunakan untuk mengambil seluruh data dari sebuah data frame dan mengembalikannya dalam bentuk list. </li>
+      <li>rdd = sebuah method yang digunakan untuk mengubah sebuah data frame menjadi sebuah RDD (Resilient Distributed Dataset) di PySpark.</li>
+      <li>take = sebuah method yang digunakan untuk mengambil sebagian data dari sebuah data frame dan mengembalikannya dalam bentuk list.</li>
+</ul><br>
 <h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/03_convert_df_rdd/07DataFrame%20ke%20RDDs.png")>
 <hr/>
@@ -194,6 +226,11 @@
 
       val deptDF = spark.createDataFrame(deptRDD)
 
+<ul>
+      <li>makeRDD = sebuah method yang digunakan untuk membuat RDD dari suatu list atau tuple yang diberikan. </li>
+      <li>Seq = sebuah method yang digunakan untuk membuat RDD dari sebuah sequence di Python. Sequence ini bisa berupa list, tuple, atau set.</li>
+      <li>createDataset = sebuah method yang digunakan untuk membuat Dataset dari suatu list atau tuple yang diberikan.</li>
+</ul><br>
 <h4>Mebuat dataset (Code 1o)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/08MembuatDataset1.png")>
 <hr/>
@@ -206,6 +243,9 @@
 
       deptDS.filter(x => x.dept_location > 1).show()
 
+<ul>
+      <li>filter = fungsi di PySpark yang digunakan untuk melakukan filter atau pemilihan data yang memenuhi kondisi tertentu dari sebuah RDD atau Dataset.</li>
+</ul><br>
 <h4>Mebuat dataset (Code 11)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/09MembuatDataset2.png")>
 <hr/>
@@ -224,6 +264,11 @@
       // mengonversi ke DataFrame kembali
       newDeptDS.toDF.first()
 
+<ul>
+      <li>as = fungsi yang digunakan untuk memberi alias atau mengubah nama kolom pada DataFrame. </li>
+      <li>toDF = fungsi yang digunakan untuk mengubah RDD menjadi DataFrame dengan format kolom yang ditentukan.</li>
+      <li>first = fungsi yang digunakan untuk mengambil nilai pertama dari RDD atau Dataset.</li>
+</ul><br>
 <h4>Konversi dataframe ke dataset dan sebaliknya (Code 12)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/05_convert_df_ds/10DataFrame%20ke%20Dataset.png")>
 <hr/>
@@ -241,6 +286,13 @@
 
       spark.catalog.listFunctions().show()
 
+<ul>
+      <li>listDatabases = fungsi yang digunakan untuk mendapatkan daftar database yang tersedia di dalam SparkSession.</li>
+      <li>listTables = fungsi yang digunakan untuk mendapatkan daftar tabel yang tersedia dalam database yang ditentukan di dalam SparkSession.</li>
+      <li>listFunctions = digunakan untuk mendapatkan daftar fungsi yang tersedia di dalam SparkSession.</li>
+      <li>isCached = fungsi yang digunakan untuk mengecek apakah RDD atau DataFrame sudah di-cache atau belum. Mengembalikan nilai boolean true jika sudah dicache dan false jika belum</li>
+      <li>select = fungsi yang digunakan untuk melakukan pemilihan kolom pada DataFrame.</li>
+</ul><br>
 <h4>Akses Metadata (Code 13)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/06_access_metadata/11Metadata.png")>
 <hr/>
