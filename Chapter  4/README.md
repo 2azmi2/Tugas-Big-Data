@@ -1,17 +1,11 @@
 <html>
   <head>
-    <style>
-      hr.class-2 {
-        border-top: 3px double #8c8b8b;
-      }
-    </style>
   </head>
   <body>
     <h1>Chapter 4</h1>
     <h2>Pengantar</h2>
     <p>Memulai spark dan mengakses "http://quickstart.cloudera:8080/" </p>
     <hr/>
-    <br />
 
       // Contoh code accumulator
       myaccum = sc.accumulator(0)
@@ -19,6 +13,7 @@
       myrdd.foreach(lambda value: myaccum.add(value))
       print myaccum.value
 
+    <hr/>
     <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/00_Pengantar/00Quickstart%208080.png")>
 
     <h2>Analitik Dengan Dataframe</h2>
