@@ -43,6 +43,8 @@
       // Membuat sebuah dataframe dengan fungsi createDataFrame
       df1 = spark.createDataFrame(mylist, myschema)
 
+<h4>Membuat Dataframe dengan createDataFrame</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/01ObjectList.png")>
 <hr/>
 <hr/>
 
@@ -50,6 +52,8 @@
       // Membuat DataFrame dengan parallelizing list dan konversi RDD ke DataFram
       df2 = sc.parallelize(mylist).toDF(myschema)
 
+<h4>Membuat Dataframe dengan Parallelizing List</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/02Parallelize.png")>
 <hr/>
 <hr/>
 
@@ -73,6 +77,8 @@
       spark.sql("SHOW TABLES").show()
       spark.sql("SELECT name,age FROM people where age > 19").show() 
 
+<h4>Read File yang ada di hdfs</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/03ReadFile.png")>
 <hr/>
 <hr/>
 
@@ -96,22 +102,6 @@
       df_people.createOrReplaceTempView("people")
       spark.sql("select * from people").show() 
 
-<hr/>
-<h3>Hasil Screenshot</h3>
-<hr/>
-<h4>Membuat Dataframe dengan createDataFrame</h4>
-<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/01ObjectList.png")>
-<hr/>
-<hr/>
-<h4>Membuat Dataframe dengan Parallelizing List</h4>
-<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/02Parallelize.png")>
-<hr/>
-<hr/>
-<h4>Read File yang ada di hdfs</h4>
-<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/03ReadFile.png")>
-<hr/>
-<hr/>
 <h4>Read file dan assign schema</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/04AssignSchema.png")>
-<hr/>
 <hr/>
