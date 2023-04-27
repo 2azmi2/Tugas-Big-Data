@@ -84,6 +84,7 @@
 </ul>
 <hr/>
 <hr/>
+<h4>Code 5</h4>
 
       // Code 5
       // Membaca data dari file yang ada di hdfs dan membuat dataframe
@@ -109,6 +110,7 @@
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/03ReadFile.png")>
 <hr/>
 <hr/>
+<h4>Code 6</h4>
 
       // Code 6
       // Membaca data dari file, lalu assign schema secara programmatically
