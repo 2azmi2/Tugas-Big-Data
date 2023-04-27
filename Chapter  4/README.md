@@ -4,6 +4,8 @@
 <hr/>
 
       // Start Spark Daemon
+      // Masuk ke Cloudera -> Command Prompt
+      
       cd /home/cloudera/spark-2.0.0-bin-hadoop2.7/sbin
       sudo ./start-all.sh
 
