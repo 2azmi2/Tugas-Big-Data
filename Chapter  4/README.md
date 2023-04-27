@@ -18,7 +18,7 @@
 <h2>01. Analitik dengan DataFrames</h2>
 <p>Membuat sebuah dataframe di dalam pyspark</p>
 <hr/>
-
+<h4>Code 1</h4>
       // Code 1
       // Masuk ke dalam pyspark shell
       
@@ -38,6 +38,7 @@
 
 <hr/>
 <hr/>
+<h4>Code 2</h4>
 
       // Code 2
       // Membuat sebuah dataframe dengan fungsi createDataFrame
@@ -47,6 +48,7 @@
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/01ObjectList.png")>
 <hr/>
 <hr/>
+<h4>Code 3</h4>
 
       // Code 3
       // Membuat DataFrame dengan parallelizing list dan konversi RDD ke DataFram
@@ -56,6 +58,7 @@
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/02Parallelize.png")>
 <hr/>
 <hr/>
+<h4>Code 4</h4>
 
       // Code 4
       // Copy files dari local ke hdfs
