@@ -209,3 +209,110 @@
 <h4>Mebuat dataset (Code 11)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/09MembuatDataset2.png")>
 <hr/>
+
+<h2>06. Mengonversi DataFrame ke Datasets dan sebaliknya</h2>
+<p>Sebuah DataFrame dapat dikonversi ke Dataset dengan menambahkan keyword as sebagai metode pada variabel DataFrame.</p>
+<hr/>
+<h4>Code 12</h4>
+
+      val newDeptDS = deptDF.as[Dept]
+
+      newDeptDS.show()
+
+      newDeptDS.first()
+
+      // mengonversi ke DataFrame kembali
+      newDeptDS.toDF.first()
+
+<h4>Konversi dataframe ke dataset dan sebaliknya (Code 12)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/05_convert_df_ds/10DataFrame%20ke%20Dataset.png")>
+<hr/>
+
+<h2>07. Mengakses Metadata menggunakan Catalog</h2>
+<p>kita dapat mengakses metadata sebuah data frame menggunakan objek Catalog. Catalog adalah bagian dari modul pyspark.sql dan digunakan untuk mengakses informasi tentang tabel, database, dan fungsi yang tersedia di SparkSession.</p>
+<hr/>
+<h4>Code 13</h4>
+
+      spark.catalog.listDatabases().select("name").show()
+
+      spark.catalog.listTables.show()
+
+      spark.catalog.isCached("sample_07")
+
+      spark.catalog.listFunctions().show()
+
+<h4>Akses Metadata (Code 13)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/06_access_metadata/11Metadata.png")>
+<hr/>
+
+<h2>08. Bekerja dengan berkas teks</h2>
+<p>kita dapat mengakses file dengan type .txt dan menampilkan isi dari file tersebut.</p>
+<hr/>
+<h4>Code 14</h4>
+
+      df_txt = spark.read.text("people.txt")
+      df_txt.show()
+      df_txt
+
+<h4>Akses File text (Code 14)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/07_impor_txt/12ReadText.png")>
+<hr/>
+
+<h2>09. Bekerja dengan JSON</h2>
+<p>Spark SQL dapat secara otomatis mengenali schema dari dataset JSON ketika dimuat ke dalam sebuah DataFrame.</p>
+<hr/>
+<h4>Code 15</h4>
+
+      df_json = spark.read.load("people.json", format="json")
+      df_json = spark.read.json("people.json")
+      df_json.printSchema()
+
+      df_json.show()
+
+<h4>JSON (Code 15)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/13JSON1.png")>
+<hr/>
+<hr/>
+<h4>Code 16</h4>
+
+      df_json.write.json("newjson_dir")
+      df_json.write.format("json").save("newjson_dir2")
+
+<h4>JSON (Code 16)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/14JSON2.png")>
+<hr/>
+<hr/>
+<h4>Code 17 (ERROR)</h4>
+
+      // Disini masih terjadi error dimana "org.sl4j.impl.StaticLoggerBinder" tidak dapat diakses
+      df_json.write.parquet("parquet_dir")
+      df_json.write.format("parquet").save("parquet_dir2")
+      
+
+<h4>JSON (Code 17)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/15JSON3%20(ERROR).png")>
+<hr/>
+
+<h2>10. Bekerja dengan CSV</h2>
+<p>Sama seperti type .txt, kita juga dapat menggunakan file bertipe CSV dimana data dari file tersebut dapat digunakan. <br>
+      Namun sebelum itu diperlukan sebuah dataset csv di dalam hdfs. berikut adalah caranya : </p>
+
+
+      // Download dataset
+      wget https://raw.githubusercontent.com/databricks/spark-csv/master/src/test/resources/cars.csv --no-check-certificate
+      
+      // Memasukkan data dari local ke hdfs
+      hadoop fs -put cars.csv cars.csv
+
+<hr/>
+<h4>Code 18</h4>
+
+      csv_df = spark.read.options(header='true',inferSchema='true').csv("cars.csv")
+
+      csv_df.printSchema()
+
+      csv_df.select('year', 'model').write.options(codec="org.apache.hadoop.io.compress.GzipCodec").csv('newcars.csv')
+
+<h4>Akses file csv (Code 18)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/09_impor_csv/16csv2.png")>
+<hr/>
