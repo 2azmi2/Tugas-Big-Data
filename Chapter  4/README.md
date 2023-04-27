@@ -306,6 +306,10 @@
       df_txt.show()
       df_txt
 
+<ul>
+      <li>Read = sebuah method yang digunakan untuk membaca file</li>
+      <li>text = sebuah method yang digunakan untuk membaca file teks sebagai RDD dengan setiap baris sebagai sebuah elemen RDD.</li>
+</ul><br>
 <h4>Akses File text (Code 14)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/07_impor_txt/12ReadText.png")>
 <hr/>
@@ -321,6 +325,12 @@
 
       df_json.show()
 
+<ul>
+      <li>load = sebuah method yang digunakan untuk membaca data dari berbagai sumber data yang didukung oleh PySpark seperti CSV, JSON, parquet, dan lainnya.</li>
+      <li>json = method yang digunakan untuk menentukan bahwa sumber data adalah file JSON.</li>
+      <li>format = method ini digunakan untuk menentukan format data yang akan dibaca.</li>
+      <li>printSchema = method ini digunakan untuk mencetak skema dari DataFrame yang dibaca dari file JSON. Skema menunjukkan tipe data dari setiap kolom dalam DataFrame.</li>
+</ul><br>
 <h4>JSON (Code 15)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/13JSON1.png")>
 <hr/>
@@ -330,6 +340,10 @@
       df_json.write.json("newjson_dir")
       df_json.write.format("json").save("newjson_dir2")
 
+<ul>
+      <li>write = method yang digunakan untuk menyimpan DataFrame ke berbagai sumber data yang didukung oleh PySpark seperti CSV, JSON, parquet, dan lainnya.</li>
+      <li>save = method yang digunakan untuk menyimpan DataFrame ke berbagai sumber data yang didukung oleh PySpark seperti CSV, JSON, parquet, dan lainnya.</li>
+</ul><br>
 <h4>JSON (Code 16)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/14JSON2.png")>
 <hr/>
@@ -340,7 +354,9 @@
       df_json.write.parquet("parquet_dir")
       df_json.write.format("parquet").save("parquet_dir2")
       
-
+<ul>
+      <li>parquet = salah satu format file data yang didukung oleh PySpark. Format ini juga dapat digunakan untuk menyimpan data dengan skema yang kompleks, seperti data bertingkat, data berulang, dan data yang mengandung tipe data kompleks seperti array atau struct.</li>
+</ul><br>
 <h4>JSON (Code 17)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/08_impor_json/15JSON3%20(ERROR).png")>
 <hr/>
@@ -365,6 +381,13 @@
 
       csv_df.select('year', 'model').write.options(codec="org.apache.hadoop.io.compress.GzipCodec").csv('newcars.csv')
 
+<ul>
+      <li>Options = parameter ini digunakan untuk menentukan opsi pembacaan file CSV seperti pemisah kolom, karakter kutipan, dan lainnya. </li>
+      <li>inferSchema = parameter ini digunakan untuk menentukan apakah skema dari file CSV harus diinfer oleh PySpark atau tidak.</li>
+      <li>csv = parameter ini digunakan untuk menentukan bahwa sumber data adalah file CSV.</li>
+      li>header = parameter ini digunakan untuk menentukan bahwa baris pertama dari file CSV adalah header, yang berisi nama kolom. </li>
+      <li>codec = parameter ini digunakan untuk menentukan kodek karakter yang digunakan untuk membaca file CSV. </li>
+</ul><br>
 <h4>Akses file csv (Code 18)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/09_impor_csv/16csv2.png")>
 <hr/>
