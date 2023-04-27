@@ -1,5 +1,5 @@
 <h1>Chapter 4</h1>
-<h2>00. Pengantar</h2>
+<h2>01. Pengantar</h2>
 <p>Memulai spark dan mengakses "http://quickstart.cloudera:8080/". <br>
       Selain itu diperlukan untuk memulai beberapa package yaitu HDFS, Hive, Hue, Spark yang ada di halaman website cloudera manager.  <br>
       Hal ini dilakukan agar praktikum dapat dijalankan dengan lancar</p>
@@ -15,7 +15,7 @@
 <h3>Hasil Screenshot halaman website quickstart</h3>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/00_Pengantar/00Quickstart%208080.png")>
 <hr/>
-<h2>01. Analitik dengan DataFrames</h2>
+<h2>02. Analitik dengan DataFrames</h2>
 <p>Membuat sebuah dataframe di dalam pyspark</p>
 <hr/>
 <h4>Code 1</h4>
@@ -36,6 +36,10 @@
       mylist = [(50, "DataFrame"),(60, "pandas")]
       myschema = ['col1', 'col2']
 
+<ul>
+  <li>mylist = variabel yang menampung sebuah list yang berisikan data 2 dimensi</li>
+  <li>myschema = variabel yang menampung sebuah list yang akan digunakan sebagai nama dari sebuah kolom yang nantinya digunakan di pembuatan dataframe</li>
+</ul>
 <hr/>
 <hr/>
 <h4>Code 2</h4>
@@ -44,7 +48,7 @@
       // Membuat sebuah dataframe dengan fungsi createDataFrame
       df1 = spark.createDataFrame(mylist, myschema)
 
-<h4>Membuat Dataframe dengan createDataFrame</h4>
+<h4>Membuat Dataframe dengan createDataFrame (Code 1 + Code 2)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/01ObjectList.png")>
 <hr/>
 <hr/>
@@ -54,7 +58,7 @@
       // Membuat DataFrame dengan parallelizing list dan konversi RDD ke DataFram
       df2 = sc.parallelize(mylist).toDF(myschema)
 
-<h4>Membuat Dataframe dengan Parallelizing List</h4>
+<h4>Membuat Dataframe dengan Parallelizing List (Code 1 + Code 3)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/02Parallelize.png")>
 <hr/>
 <hr/>
@@ -80,7 +84,7 @@
       spark.sql("SHOW TABLES").show()
       spark.sql("SELECT name,age FROM people where age > 19").show() 
 
-<h4>Read File yang ada di hdfs</h4>
+<h4>Read File yang ada di hdfs (Code 5)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/03ReadFile.png")>
 <hr/>
 <hr/>
@@ -105,6 +109,20 @@
       df_people.createOrReplaceTempView("people")
       spark.sql("select * from people").show() 
 
-<h4>Read file dan assign schema</h4>
+<h4>Read file dan assign schema (Code 6)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/01_dataframes/04AssignSchema.png")>
+<hr/>
+
+<h2>03. Membuat DataFrame dari Database Eksternal</h2>
+<p>Memulai spark dan mengakses "http://quickstart.cloudera:8080/". <br>
+      Selain itu diperlukan untuk memulai beberapa package yaitu HDFS, Hive, Hue, Spark yang ada di halaman website cloudera manager.  <br>
+      Hal ini dilakukan agar praktikum dapat dijalankan dengan lancar</p>
+<hr/>
+
+      // Start Spark Daemon
+      // Masuk ke Cloudera -> Command Prompt
+      
+      cd /home/cloudera/spark-2.0.0-bin-hadoop2.7/sbin
+      sudo ./start-all.sh
+
 <hr/>
