@@ -15,6 +15,7 @@
 <h3>Hasil Screenshot halaman website quickstart</h3>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/00_Pengantar/00Quickstart%208080.png")>
 <hr/>
+
 <h2>02. Analitik dengan DataFrames</h2>
 <p>Membuat sebuah dataframe di dalam pyspark</p>
 <hr/>
@@ -159,6 +160,7 @@
 <h4>Dataframe dari data mysql cara 2 (Code 8)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/02_dataframe_mysql/06Metode2.png")>
 <hr/>
+
 <h2>04. Mengonversi DataFrames ke RDDs</h2>
 <p>Sama seperti mengkonversi RDDs ke DataFrames, proses sebaliknya dapat dilakukan yaitu mengubah Dataframe ke RDDs</p>
 <hr/>
@@ -177,4 +179,33 @@
 
 <h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/03_convert_df_rdd/07DataFrame%20ke%20RDDs.png")>
+<hr/>
+
+<h2>05. Membuat Datasets</h2>
+<p>Untuk membuat dataset dan dataframe dari RDDs maka perlu untuk masuk ke scala shell terlebih dahulu</p>
+<hr/>
+<h4>Code 10</h4>
+
+      case class Dept(dept_id: Int, dept_name: String)
+
+      val deptRDD = sc.makeRDD(Seq(Dept(1,"Sales"),Dept(2,"HR")))
+
+      val deptDS = spark.createDataset(deptRDD)
+
+      val deptDF = spark.createDataFrame(deptRDD)
+
+<h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/08MembuatDataset1.png")>
+<hr/>
+<hr/>
+<h4>Code 11</h4>
+
+      deptDS.rdd
+
+      deptDF.rdd
+
+      deptDS.filter(x => x.dept_location > 1).show()
+
+<h4>Mengubah dataframe menjadi RDDs (Code 9)</h4>
+<img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/04_datasets/09MembuatDataset2.png")>
 <hr/>
