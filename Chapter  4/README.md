@@ -10,13 +10,16 @@
     <h1>Chapter 4</h1>
     <h2>Pengantar</h2>
     <p>Memulai spark dan mengakses "http://quickstart.cloudera:8080/" </p>
-    <hr class="class-2" />
+    <hr/>
     <br />
-          // Code Menjalankan Spark Daemon
-          cd /home/cloudera/spark-2.0.0-bin-hadoop2.7/sbin
-          sudo ./start-all.sh
 
-    <img src="00_Pengantar/00Quickstart 8080.png")>
+      // Contoh code accumulator
+      myaccum = sc.accumulator(0)
+      myrdd = sc.parallelize(range(1,100))
+      myrdd.foreach(lambda value: myaccum.add(value))
+      print myaccum.value
+
+    <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Chapter%20%204/00_Pengantar/00Quickstart%208080.png")>
 
     <h2>Analitik Dengan Dataframe</h2>
     <p>Mengizinkan tugas untuk menulis data ke variabel bersama alih-alih memiliki variabel terpisah untuk setiap tugas. </p><br>
