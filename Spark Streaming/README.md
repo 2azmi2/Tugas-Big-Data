@@ -115,7 +115,7 @@
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Spark%20Streaming/02_statefull_err3.png">
 <img src="https://github.com/2azmi2/Tugas-Big-Data/blob/main/Spark%20Streaming/02_statefull_err4.png">
 
-<h2>Transformasi Spark Streaming</h2>
+<h2>Transformasi Spark Streaming (ERROR)</h2>
 
     // Contoh code Understanding RDDs
     from __future__ import print_function
