@@ -52,7 +52,7 @@
 </p>
 
 <h3>Kode 3</h3>
-<p>Perintah untuk menjalankan "network_wordcount.py".</p><br>
+<p>Perintah untuk menjalankan file "network_wordcount.py".</p><br>
 
     // Menjalankan stateless wordcount
     spark-submit --master local[*] network_wordcount.py localhost 9999
